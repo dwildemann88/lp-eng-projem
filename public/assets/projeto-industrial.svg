@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#171717"/><stop offset="1" stop-color="#2a2518"/></linearGradient><radialGradient id="y" cx="72%" cy="18%" r="60%"><stop stop-color="#f3c62f" stop-opacity=".28"/><stop offset="1" stop-color="#f3c62f" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="640" fill="url(#g)"/><rect width="900" height="640" fill="url(#y)"/>
+  <g opacity=".22" stroke="#f3c62f" stroke-width="2"><path d="M0 500h900M0 425h900M0 350h900M0 275h900"/><path d="M120 640V190M260 640V140M420 640V110M600 640V160M760 640V210"/></g>
+  <g fill="#f5f2e8" opacity=".1"><rect x="110" y="190" width="170" height="260" rx="10"/><rect x="338" y="135" width="210" height="315" rx="10"/><rect x="610" y="220" width="170" height="230" rx="10"/></g>
+  <g fill="none" stroke="#f3c62f" stroke-width="10" stroke-linecap="round" opacity=".74"><path d="M170 505h560"/><path d="M250 505V360h135v145"/><path d="M485 505V300h165v205"/></g>
+  <g fill="#f3c62f" opacity=".95"><circle cx="250" cy="360" r="12"/><circle cx="385" cy="360" r="12"/><circle cx="485" cy="300" r="12"/><circle cx="650" cy="300" r="12"/></g>
+  <text x="64" y="86" fill="#f5f2e8" font-family="Arial" font-size="31" font-weight="700">Infraestrutura industrial</text>
+</svg>

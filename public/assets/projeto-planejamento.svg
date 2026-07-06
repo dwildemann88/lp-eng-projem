@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111"/><stop offset="1" stop-color="#2a2418"/></linearGradient><radialGradient id="y" cx="75%" cy="20%" r="65%"><stop stop-color="#f3c62f" stop-opacity=".25"/><stop offset="1" stop-color="#f3c62f" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="640" fill="url(#g)"/><rect width="900" height="640" fill="url(#y)"/>
+  <g fill="none" stroke="#f5f2e8" stroke-width="3" opacity=".18"><rect x="180" y="145" width="540" height="360" rx="16"/><path d="M240 215h420M240 295h310M240 375h420M240 455h250"/></g>
+  <g fill="none" stroke="#f3c62f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".82"><path d="M230 500 365 335l120 88 185-230"/><path d="M635 194h35v36"/></g>
+  <circle cx="365" cy="335" r="15" fill="#f3c62f"/><circle cx="485" cy="423" r="15" fill="#f3c62f"/>
+  <text x="64" y="86" fill="#f5f2e8" font-family="Arial" font-size="31" font-weight="700">Planejamento elétrico</text>
+</svg>

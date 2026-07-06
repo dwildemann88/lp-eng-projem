@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111"/><stop offset="1" stop-color="#262116"/></linearGradient><radialGradient id="y" cx="65%" cy="28%" r="62%"><stop stop-color="#f3c62f" stop-opacity=".25"/><stop offset="1" stop-color="#f3c62f" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="640" fill="url(#g)"/><rect width="900" height="640" fill="url(#y)"/>
+  <path d="M0 520c150-65 300-70 450-10s300 48 450-15v145H0z" fill="#f3c62f" opacity=".14"/>
+  <g fill="none" stroke="#f3c62f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".82"><path d="M180 500V320l150-100 150 100v180"/><path d="M480 500V350h210v150"/><path d="M230 500v-90h80v90M370 500v-135h75v135"/><path d="M150 500h600"/></g>
+  <g stroke="#f5f2e8" stroke-width="2" opacity=".15"><path d="M90 560c95-35 175-35 270 0s175 35 270 0 175-35 270 0"/><path d="M40 590c95-35 175-35 270 0s175 35 270 0 175-35 270 0"/></g>
+  <text x="64" y="86" fill="#f5f2e8" font-family="Arial" font-size="31" font-weight="700">Estrutura elétrica no agro</text>
+</svg>
