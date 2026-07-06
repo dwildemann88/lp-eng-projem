@@ -20,7 +20,7 @@ const PROJECTS = [
     icon: "factory",
     title: "Instalações elétricas industriais",
     lead: "Execução elétrica para operações que não podem depender de improviso, gambiarra ou manutenção corretiva constante.",
-    image: "/assets/projeto-industrial.svg",
+    image: "/assets/industrial.png",
     projects: [
       { title: "Máquinas e pontos de força", text: "Alimentação elétrica, distribuição e preparação para novos equipamentos." },
       { title: "Quadros e circuitos", text: "Organização de cargas, proteção, identificação e expansão elétrica planejada." },
@@ -33,7 +33,7 @@ const PROJECTS = [
     icon: "agro",
     title: "Soluções elétricas para o agro",
     lead: "Instalações para propriedades, galpões, armazéns, irrigação e estruturas produtivas que exigem disponibilidade.",
-    image: "/assets/projeto-agro.svg",
+    image: "/assets/agro.png",
     projects: [
       { title: "Galpões e propriedades", text: "Iluminação, força, painéis, motores e infraestrutura para rotina produtiva." },
       { title: "Armazenagem e produção", text: "Estrutura elétrica para uso contínuo, expansão e redução de falhas operacionais." },
@@ -46,7 +46,7 @@ const PROJECTS = [
     icon: "tower",
     title: "Infraestrutura para crescimento elétrico",
     lead: "Base técnica para crescer sem sobrecarregar a rede, travar a operação ou refazer serviço depois.",
-    image: "/assets/projeto-infra.svg",
+    image: "/assets/comercial.png",
     projects: [
       { title: "Entrada de energia", text: "Estrutura de medição, alimentação e adequação para padrão da concessionária." },
       { title: "Distribuição de carga", text: "Dimensionamento para evitar gargalos, quedas, aquecimento e falhas recorrentes." },
@@ -59,7 +59,7 @@ const PROJECTS = [
     icon: "plan",
     title: "Planejamento elétrico antes da execução",
     lead: "Levantamento, dimensionamento e escopo claro para reduzir decisão improvisada em campo.",
-    image: "/assets/projeto-planejamento.svg",
+    image: "/assets/projeto.png",
     projects: [
       { title: "Levantamento de necessidade", text: "Análise da estrutura, carga prevista, ambiente e uso real da instalação." },
       { title: "Dimensionamento", text: "Definição técnica da solução compatível com segurança, carga e crescimento." },
@@ -83,10 +83,10 @@ const PROBLEMS = [
 ];
 
 const PROCESS = [
-  { n: "01", icon: "search", title: "Diagnóstico", text: "Entendimento da demanda, estrutura, carga, urgência e condições reais do local." },
-  { n: "02", icon: "plan", title: "Escopo técnico", text: "Definição do que será feito, prioridade, materiais críticos e caminho de execução." },
-  { n: "03", icon: "bolt", title: "Execução", text: "Equipe em campo com orientação técnica, organização e controle da instalação." },
-  { n: "04", icon: "check", title: "Entrega", text: "Validação final, orientação de uso e instalação pronta para a operação prevista." },
+  { n: "01", icon: "search", title: "Levantamento", text: "A equipe entende a demanda, o ambiente, a carga prevista e os pontos críticos da estrutura." },
+  { n: "02", icon: "plan", title: "Dimensionamento", text: "A solução é definida com base no uso real da instalação, não apenas em estimativa genérica." },
+  { n: "03", icon: "bolt", title: "Execução", text: "A obra segue com escopo claro, organização de materiais e prioridade técnica para a operação." },
+  { n: "04", icon: "check", title: "Entrega", text: "A instalação é conferida e orientada para uso, manutenção e futuras ampliações." },
 ];
 
 const FORM_NEEDS = [
@@ -236,8 +236,10 @@ function Header({ onOpenForm, onWhatsapp, onRoute }) {
         </a>
         <nav className="topnav" aria-label="Navegação principal">
           <a href="/#inicio" onClick={(event) => onRoute(event, "/", "inicio")}>Início</a>
-          <a href="/#diagnostico" onClick={(event) => onRoute(event, "/", "diagnostico")}>Diagnóstico</a>
+          
+          <a href="/#atuacao" onClick={(event) => onRoute(event, "/", "atuacao")}>Atuação</a>
           <a href="/#processo" onClick={(event) => onRoute(event, "/", "processo")}>Processo</a>
+          <a href="/#faq" onClick={(event) => onRoute(event, "/", "faq")}>Dúvidas</a>
           <a href="/privacidade" onClick={(event) => onRoute(event, "/privacidade")}>Privacidade</a>
         </nav>
         <button className="nav-whatsapp" type="button" onClick={onWhatsapp}>
@@ -257,7 +259,7 @@ function Hero({ activeIndex, setActiveIndex, onOpenForm }) {
       <div className="container hero-inner">
         <div className="hero-copy" data-reveal>
           <p className="hero-kicker">PROJEM ENGENHARIA ELÉTRICA</p>
-          <h1>Instalação elétrica sem improviso para indústria e agro.</h1>
+          <h1>Instalação elétrica <span className="hero-highlight">especializada</span></h1>
           <p>Projeto, execução e adequação para máquinas, galpões, entradas de energia, quadros e estruturas produtivas que precisam operar com segurança.</p>
           <button className="hero-cta" type="button" onClick={onOpenForm}>Solicitar análise técnica</button>
         </div>
@@ -307,37 +309,17 @@ function Hero({ activeIndex, setActiveIndex, onOpenForm }) {
 }
 
 function ProblemSection({ onOpenForm }) {
-  return (
-    <section className="section white-section" id="diagnostico">
-      <div className="container problem-layout">
-        <div className="section-title" data-reveal>
-          <span className="eyebrow-dark">análise técnica</span>
-          <h2>Quando a elétrica precisa entrar no planejamento.</h2>
-          <p>Antes de ligar uma máquina, ampliar um galpão ou adequar uma entrada de energia, é preciso saber se a estrutura suporta a demanda real.</p>
-          <button className="dark-cta" type="button" onClick={onOpenForm}>Solicitar análise da estrutura</button>
-        </div>
-        <div className="problem-grid">
-          {PROBLEMS.map((item) => (
-            <article className="problem-card" data-reveal key={item.title}>
-              <i><Icon name={item.icon} /></i>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  
 }
 
 function DeliverySection() {
   return (
     <section className="section dark-section" id="atuacao">
-      <div className="container split-grid">
-        <div className="section-title narrow" data-reveal>
+      <div className="container delivery-stack">
+        <div className="section-title narrow centered-title" data-reveal>
           <span className="eyebrow-yellow">controle de execução</span>
-          <h2>Do levantamento à entrega, cada etapa precisa ter critério técnico.</h2>
-          <p>A Projem atua para transformar a demanda elétrica em escopo claro: carga prevista, pontos críticos, materiais, prioridades e execução em campo.</p>
+          <h2>Critério técnico em todas etapas.</h2>
+         
         </div>
         <div className="proof-panel" data-reveal>
           <strong>O que a equipe avalia antes de executar</strong>
@@ -345,7 +327,7 @@ function DeliverySection() {
             <li>Carga prevista e equipamentos que serão alimentados.</li>
             <li>Condição dos quadros, circuitos, entrada e distribuição.</li>
             <li>Prioridade da operação: urgência, expansão ou planejamento.</li>
-            <li>Possíveis pontos de retrabalho em estruturas antigas, ampliadas ou sem documentação clara.</li>
+            <li>Pontos de retrabalho em estruturas antigas, ampliadas ou sem documentação clara.</li>
           </ul>
         </div>
       </div>
@@ -355,17 +337,20 @@ function DeliverySection() {
 
 function ProcessSection() {
   return (
-    <section className="section process-section" id="processo">
+    <section className="section white-section process-section" id="processo">
       <div className="container">
-        <div className="section-title narrow" data-reveal>
-          <span className="eyebrow-yellow">processo</span>
-          <h2>Como o trabalho avança</h2>
-          <p>Da leitura técnica da estrutura até a entrega da instalação em campo.</p>
+        <div className="section-title centered-title" data-reveal>
+          <span className="eyebrow-dark">como o trabalho avança</span>
+          <h2>Processo mais simples e execução com segurança.</h2>
+          
         </div>
         <div className="process-grid">
           {PROCESS.map((item) => (
-            <article className="process-item" key={item.n} data-reveal>
-              <div className="process-head"><span>{item.n}</span><i><Icon name={item.icon} /></i></div>
+            <article className="process-item" data-reveal key={item.n}>
+              <div className="process-head">
+                <span>{item.n}</span>
+                <i><Icon name={item.icon} /></i>
+              </div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -382,7 +367,7 @@ function FinalCta({ onOpenForm }) {
       <div className="container final-cta-card" data-reveal>
         <div>
           <span className="eyebrow-yellow">próximo passo</span>
-          <h2>Antes de orçar, entenda o que precisa ser dimensionado.</h2>
+          <h2>Eentenda o que precisa ser dimensionado.</h2>
           <p>Envie a demanda inicial. A equipe recebe os dados organizados e segue o contato pelo WhatsApp.</p>
         </div>
         <button className="hero-cta" type="button" onClick={onOpenForm}>Iniciar análise técnica</button>
@@ -392,6 +377,7 @@ function FinalCta({ onOpenForm }) {
 }
 
 function FaqSection() {
+  const [openIndex, setOpenIndex] = useState(0);
   const faqs = [
     {
       question: "A Projem faz apenas projeto ou também executa a instalação?",
@@ -419,20 +405,63 @@ function FaqSection() {
     <section className="section white-section faq-section" id="faq">
       <div className="container faq-layout">
         <div className="section-title" data-reveal>
-          <span className="eyebrow-dark">perguntas frequentes</span>
-          <h2>Dúvidas comuns antes de solicitar uma análise.</h2>
-          <p>Respostas diretas para entender quando faz sentido chamar a Projem e quais informações ajudam no primeiro contato.</p>
+          
+          <h2>Dúvidas frequentes.</h2>
+          
         </div>
         <div className="faq-list" data-reveal>
-          {faqs.map((item, index) => (
-            <details className="faq-item" key={item.question} open={index === 0}>
-              <summary>{item.question}</summary>
-              <p>{item.answer}</p>
-            </details>
-          ))}
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index;
+            const answerId = `faq-answer-${index}`;
+
+            return (
+              <article className={`faq-item ${isOpen ? "is-open" : ""}`} key={item.question}>
+                <button
+                  className="faq-question"
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                >
+                  <span>{item.question}</span>
+                  <i aria-hidden="true">{isOpen ? "−" : "+"}</i>
+                </button>
+                <div className="faq-answer-wrap" id={answerId} role="region" aria-hidden={!isOpen}>
+                  <p>{item.answer}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
+  );
+}
+
+function ChatBubbleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M5.2 18.2c-1.05-.98-1.7-2.28-1.7-3.72V9.9C3.5 6.95 6.04 4.6 9.2 4.6h5.6c3.16 0 5.7 2.35 5.7 5.3v4.58c0 2.94-2.54 5.3-5.7 5.3H9.1l-3.64 1.74c-.46.22-.94-.22-.76-.7l.5-2.62Z" fill="currentColor"/>
+      <path d="M8.15 10.35h7.7M8.15 13.45h5.55" stroke="rgba(0,0,0,.42)" strokeWidth="1.55" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function FloatingContactButton({ onWhatsapp }) {
+  const [bubbleOpen, setBubbleOpen] = useState(true);
+
+  return (
+    <div className="floating-contact" aria-label="Atalho de WhatsApp">
+      {bubbleOpen ? (
+        <div className="floating-contact-bubble" role="status">
+          <span>Fale com um especialista</span>
+          <button type="button" aria-label="Fechar aviso" onClick={() => setBubbleOpen(false)}>×</button>
+        </div>
+      ) : null}
+      <button className="floating-contact-button" type="button" onClick={onWhatsapp} aria-label="Falar com especialista pelo WhatsApp">
+        <ChatBubbleIcon />
+      </button>
+    </div>
   );
 }
 
@@ -461,7 +490,7 @@ function Footer({ onRoute }) {
           <a href="/privacidade" onClick={(event) => onRoute(event, "/privacidade")}>Ver política de privacidade</a>
         </div>
       </div>
-      <div className="container footer-bottom"><span>© {new Date().getFullYear()} Projem Engenharia Elétrica.</span><span>LP otimizada para captação técnica.</span></div>
+      <div className="container footer-bottom"><span>© {new Date().getFullYear()} Projem Engenharia Elétrica.</span><span>feito por Daniel Wildemann</span></div>
     </footer>
   );
 }
@@ -903,6 +932,7 @@ export default function App() {
       {isPrivacy ? <PrivacyPage onRoute={navigate} /> : <HomePage activeIndex={activeIndex} setActiveIndex={setActiveIndex} onOpenForm={openForm} />}
       <Footer onRoute={navigate} />
       <LeadWizard open={formOpen} onClose={() => setFormOpen(false)} attribution={attribution} />
+      <FloatingContactButton onWhatsapp={handleWhatsapp} />
     </div>
   );
 }
