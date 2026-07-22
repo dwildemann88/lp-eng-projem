@@ -3,7 +3,6 @@ const ENV = import.meta.env || {};
 const CONFIG = {
   gtmId: ENV.VITE_GTM_ID || "",
   ga4Id: ENV.VITE_GA4_ID || "",
-  metaPixelId: ENV.VITE_META_PIXEL_ID || "",
   googleAdsSendTo: ENV.VITE_GOOGLE_ADS_SEND_TO || "",
   leadEndpoint: ENV.VITE_LEAD_ENDPOINT || "/api/lead",
 };
@@ -101,7 +100,7 @@ export function initTracking() {
     window.__projemGtmLoaded = true;
   }
 
-  // Regra: se GTM existir, ele deve administrar GA4 e Meta. Isso evita duplicidade.
+  // Regra: se GTM existir, ele deve administrar o GA4. Isso evita duplicidade.
   if (!CONFIG.gtmId && CONFIG.ga4Id && !window.__projemGaLoaded) {
     injectScript("projem-ga4", `https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id}`);
     window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
@@ -110,29 +109,6 @@ export function initTracking() {
     window.__projemGaLoaded = true;
   }
 
-  if (!CONFIG.gtmId && CONFIG.metaPixelId && !window.__projemMetaLoaded) {
-    /* eslint-disable */
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = true;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = true;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-    /* eslint-enable */
-    window.fbq("init", CONFIG.metaPixelId);
-    window.fbq("track", "PageView");
-    window.__projemMetaLoaded = true;
-  }
 }
 
 export function trackEvent(eventName, payload = {}, eventId = "") {
@@ -160,7 +136,7 @@ export function trackEvent(eventName, payload = {}, eventId = "") {
     }
   }
 
-  if (!CONFIG.gtmId && typeof window.fbq === "function") {
+  if (typeof window.fbq === "function") {
     if (eventName === "generate_lead") {
       window.fbq("track", "Lead", {
         content_name: "lead_engenharia_eletrica",

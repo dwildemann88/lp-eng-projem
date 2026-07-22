@@ -9,7 +9,7 @@ import {
   trackEvent,
 } from "./tracking";
 
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || "555599686302";
+const WHATSAPP_NUMBER = "555584710183";
 const COMPANY_CNPJ = import.meta.env.VITE_COMPANY_CNPJ || "20.195.559/0001-21";
 const COMPANY_EMAIL = import.meta.env.VITE_COMPANY_EMAIL || "comercial@projem.com.br";
 
@@ -477,7 +477,7 @@ function Footer({ onRoute }) {
         <div className="footer-col">
           <h4>Contato</h4>
           <p>{COMPANY_EMAIL}</p>
-          <p>WhatsApp: +55 55 9968-6302</p>
+          <p>WhatsApp: +55 55 8471-0183</p>
         </div>
         <div className="footer-col">
           <h4>Dados</h4>
